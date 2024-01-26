@@ -10,7 +10,7 @@
     align-items: center;
     height: 6rem;
     width: 100%;
-    background: red;
+    background:  #001F8B;
 }
 
 .hero__profile {
@@ -79,16 +79,18 @@
 }
 
 .hero__textarea {
-    position: relative;
+     position: relative;
      height: 100%;
      width: 100%;
      padding: 1rem;
      resize: none;
      font-size: var(--font-medium-s);
      border-radius: 0.5rem;
-     color: #9A9A9A;
+     
 }
-
+.hero__textarea::placeholder {
+    color: #9A9A9A;
+}
 .hero__btn {
     position: absolute;
     background: transparent;

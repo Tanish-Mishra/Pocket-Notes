@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Hero.module.css";
 
 import Arrow from "/assets/icons/arrow.svg";
-const Hero = (props) => {
+const Hero = ({ activeNote }) => {
 
   return (
     <div className={styles.hero}>
       <div className={styles.hero__header}>
-        <div className={styles.hero__profile}>MN</div>
-        <div className={styles.hero__header_name}>My notes</div>
+        <div className={styles.hero__profile} style={{background: `${activeNote?.color}`}}>MN</div>
+        <div className={styles.hero__header_name}>{activeNote?.name}</div>
       </div>
 
       <div className={styles.hero__body}>
@@ -27,6 +27,7 @@ const Hero = (props) => {
           className={styles.hero__textarea}
           placeholder="Enter Your text here........."
           autoFocus
+          spellCheck="false"
         ></textarea>
         <button className={styles.hero__btn}>
           <img src={Arrow} alt="enter" />

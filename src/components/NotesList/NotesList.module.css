@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: var(--margin-large) 0 0 1rem;
+    padding: var(--margin-large) 0 0 0;
     align-items: center;
     height: 100vh;
     width: 30%;
@@ -16,16 +16,18 @@
 
 .notes__list {
     align-self: flex-start;
+    width: 100%;
     margin: var(--margin-medium) 0 0 0;
 }
 
 .notes__list_item {
+    padding-left: 2rem ;
     display: flex;
-    width: 15rem;
+    height: 6rem;
+    /* width: 100%; */
+    gap: 2.5rem;
     margin: var(--margin-medium) 0 0 0;
-    justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;        
 }
 
 .notes__profile {
@@ -37,7 +39,7 @@
     color: #fff;
     font-weight: 500;
     border-radius: 50%;
-    background: red;
+
 }
 
 .notes__name {
@@ -48,8 +50,7 @@
 
 .notes__btn {
     position: fixed;
-    top: 5rem;
-    left: 10rem;
+    left: 20%;
     height: 4.5rem;
     width: 4.5rem;
     display: flex;
@@ -63,4 +64,8 @@
     outline: none;
     background: #16008B;
     z-index: 1;
+}
+.active {
+    border-radius: 1rem;
+    background: rgba(47, 47, 47, 0.17); 
 }

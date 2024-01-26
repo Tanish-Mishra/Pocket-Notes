@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './NotesList.module.css'
+
+import Add from '/assets/icons/add.png'
 const NotesList = () => {
   return (
     <div className={styles.notes}>
@@ -10,6 +12,7 @@ const NotesList = () => {
              <div className={`${styles.notes__name}`}>My Notes</div>
           </div>
         </div>
+        <button className={styles.notes__btn}><img src={Add} alt='error'/></button>
     </div>
   )
 }

@@ -47,7 +47,9 @@
 }
 
 .notes__btn {
-    position: absolute;
+    position: fixed;
+    top: 5rem;
+    left: 10rem;
     height: 4.5rem;
     width: 4.5rem;
     display: flex;
@@ -60,4 +62,5 @@
     border: none;
     outline: none;
     background: #16008B;
+    z-index: 1;
 }

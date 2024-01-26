@@ -1,18 +1,23 @@
+
 import React from 'react'
 import styles from './NotesList.module.css'
 
 import Add from '/assets/icons/add.png'
-const NotesList = () => {
+const NotesList = ({ notes, setIsPopup }) => {
   return (
     <div className={styles.notes}>
         <h3 className={styles.notes__heading}>Pocket Notes</h3>
         <div className={styles.notes__list}>
+            {  notes.map((note)=>(
           <div className={styles.notes__list_item}>
              <div className={styles.notes__profile}>HM</div>
-             <div className={`${styles.notes__name}`}>My Notes</div>
+             <div className={`${styles.notes__name}`}>{note.name}</div>
           </div>
+))}
         </div>
-        <button className={styles.notes__btn}><img src={Add} alt='error'/></button>
+        <button className={styles.notes__btn} onClick={()=>{
+            setIsPopup(true)
+        }}><img src={Add} alt='error'/></button>
     </div>
   )
 }

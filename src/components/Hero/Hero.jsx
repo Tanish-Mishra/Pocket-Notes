@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./Hero.module.css";
 
 import Arrow from "/assets/icons/arrow.svg";
-const Hero = () => {
+const Hero = (props) => {
+
   return (
     <div className={styles.hero}>
       <div className={styles.hero__header}>

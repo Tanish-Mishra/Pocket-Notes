@@ -1,0 +1,45 @@
+.notes {
+    display: flex;
+    flex-direction: column;
+    padding: var(--margin-medium-lm) 0 0 1rem;
+    align-items: center;
+    height: 100vh;
+    width: 30%;
+    border: 1px solid red;
+}
+
+.notes__heading {
+    font-size: var(--font-medium);
+}
+
+.notes__list {
+    align-self: flex-start;
+    margin: var(--margin-medium-lm) 0 0 0;
+}
+
+.notes__list_item {
+    display: flex;
+    width: 15rem;
+    margin: var(--margin-medium) 0 0 0;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.notes__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50%;
+    background: red;
+}
+
+.notes__name {
+    color: #000;
+    font-weight: 500;
+    font-size: var(--font-medium-sm);
+}

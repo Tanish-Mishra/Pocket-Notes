@@ -12,28 +12,43 @@ const Home = () => {
   const [isPopup, setIsPopup] = useState(false);
   const [notes, setNotes] = useState([]);
   const [color, setColor] = useState("");
-  const [active,setActive] = useState(false)  
+  const [active,setActive] = useState(false)
+  const [notesText,setNotesText] = useState([])
   const groupName = useRef(null);
 
   const handleNotes = () => {
     if (groupName.current.value === "" || color === "") {
       return;
     }
-    console.log(groupName.current.value);
     const newNotes = {
       id: uuid(),
       name: groupName.current.value,
-      text: "This is new sample note 2",
+      text: "",
       color: `${color}`,
+      date: new Date().toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }),
+      time: new Date().toLocaleTimeString(),
     };
     setNotes([...notes, newNotes]);
     setIsPopup(false);
   };
 
-  useEffect(() => {
-    console.log(notes);
-  });
+const onUpdateNote = (updatedNote) => {
+  const updatedNotesArray = notes.map((note) => {
+    if(note.id === active) {
+      return updatedNote
+    }
+    return note
+  })
+  setNotes(updatedNotesArray)
+}
 
+useEffect(()=>{
+  console.log(notesText)
+},[notesText])
   const activeNote = () => {
     return notes.find((notes)=> notes.id === active)
   }
@@ -50,7 +65,7 @@ const Home = () => {
         <></>
       )}
      <NotesList notes={notes} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
-     {!active ? <MainArea/>:  <Hero active={active} activeNote={activeNote()}/>}
+     {!active ? <MainArea/>:  <Hero active={active} activeNote={activeNote()} notesText={notesText} notes={notes} onUpdateNote={onUpdateNote}/>}
    
     </div>
   );

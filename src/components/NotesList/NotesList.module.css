@@ -16,7 +16,12 @@
 
 .notes__list {
     align-self: flex-start;
+    height: 100%;
     width: 100%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
     margin: var(--margin-medium) 0 0 0;
 }
 

@@ -101,4 +101,6 @@
 .hero__btn img{
     height: 2rem;
     width: 2rem;
+    background: transparent;
+    color: red;
 }

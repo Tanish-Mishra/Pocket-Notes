@@ -14,6 +14,7 @@ const Home = () => {
   const [color, setColor] = useState("");
   const [active,setActive] = useState(false)
   const [notesText,setNotesText] = useState([])
+  const [activeNotesData,setActiveNotesData] = useState([])
   const groupName = useRef(null);
 
   const handleNotes = () => {
@@ -43,12 +44,18 @@ const onUpdateNote = (updatedNote) => {
     }
     return note
   })
+  setNotesText([...notesText,updatedNotesArray])
   setNotes(updatedNotesArray)
 }
 
 useEffect(()=>{
-  console.log(notesText)
+    const updatedNotes = notesText.filter((note)=>{
+      return note.id === activeNote.id
+    })
+   setActiveNotesData(updatedNotes)
+   console.log(activeNotesData)
 },[notesText])
+
   const activeNote = () => {
     return notes.find((notes)=> notes.id === active)
   }
@@ -65,7 +72,7 @@ useEffect(()=>{
         <></>
       )}
      <NotesList notes={notes} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
-     {!active ? <MainArea/>:  <Hero active={active} activeNote={activeNote()} notesText={notesText} notes={notes} onUpdateNote={onUpdateNote}/>}
+     {!active ? <MainArea/>:  <Hero active={active} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
    
     </div>
   );

@@ -14,7 +14,10 @@ const NotesList = ({ notes, setIsPopup,active,setActive }) => {
                 setActive(note.id)
              }
           }>
-             <div className={styles.notes__profile} style={{background: `${note.color}`}}>HM</div>
+             <div className={styles.notes__profile} style={{background: `${note.color}`}}>{note.name.split(" ")
+          .map((word) => word.charAt(0))
+          .join("")
+          .toUpperCase()}</div>
              <div className={`${styles.notes__name}`}>{note.name}</div>
           </div>
 ))}

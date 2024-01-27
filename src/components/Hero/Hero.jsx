@@ -34,7 +34,10 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.hero__header}>
-        <div className={styles.hero__profile} style={{background: `${activeNote?.color}`}}>MN</div>
+        <div className={styles.hero__profile} style={{background: `${activeNote?.color}`}}>{activeNote.name.split(" ")
+          .map((word) => word.charAt(0))
+          .join("")
+          .toUpperCase()}</div>
         <div className={styles.hero__header_name}>{activeNote?.name}</div>
       </div>
       
@@ -66,6 +69,7 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
          }}
          onKeyDown={(e)=>{
             if (e.key === 'Enter') {
+                e.preventDefault();
                 onEditField(inputValue) 
                 textValue.current.value = " "
              }

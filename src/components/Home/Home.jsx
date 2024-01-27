@@ -51,12 +51,12 @@ const onUpdateNote = (updatedNote) => {
 
 useEffect(()=>{
     const updatedNotes = notesText.filter((note)=>{
-          if(note.id == active) {
+          if(note.id === active) {
             return note.id
           }
     })
 
-   setActiveNotesData(updatedNotes)
+    setActiveNotesData(updatedNotes)
     console.log(notesText)
 },[notesText,active])
 

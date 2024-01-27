@@ -7,7 +7,6 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
      const [inputValue,setInputValue] = useState()
      const arrowHighlight = useRef(null)
      const textValue = useRef(null)
-     const [lol,setlol] = useState([])
 
      const onEditField = (value) => {
         if(value.trim().length>0) {
@@ -25,15 +24,6 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
           }) }
      } 
    
-     useEffect(()=>{
-        // console.log(activeNotesData)
-     },[notesText])
-
-     useEffect(()=>{
-         setlol(activeNotesData)
-         console.log(lol)
-     },[notesText])
-
    useEffect(()=>{
     if(textValue.current.value.trim().length>0) {
      arrowHighlight.current.innerHTML = `<img src=${BlueArrow} alt="error"/>`
@@ -52,13 +42,13 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
   
      
   { activeNotesData.map((note)=>(
-
+   
         <div className={styles.hero__display}>
-          <p>{note[0].text}</p>
+          <p>{note.text}</p>
           <div className={styles.hero__date}>
-            <span>{note[0]?.date}</span>
+            <span>{note?.date}</span>
             <span>&#x2B2C;</span>
-            <span>{note[0]?.time}</span>
+            <span>{note?.time}</span>
           </div>
         </div>
 
@@ -74,13 +64,19 @@ const Hero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
           onChange={(e)=>{
           setInputValue(e.target.value)
          }}
+         onKeyDown={(e)=>{
+            if (e.key === 'Enter') {
+                onEditField(inputValue) 
+                textValue.current.value = " "
+             }
+        }}
          ref={textValue}
           spellCheck="false"
         ></textarea>
         <button className={styles.hero__btn} ref={arrowHighlight} onClick={()=>{
              onEditField(inputValue) 
              textValue.current.value = " "
-        }}>
+        }} >
           <img src={Arrow}  alt="enter" />
         </button>
       </div>

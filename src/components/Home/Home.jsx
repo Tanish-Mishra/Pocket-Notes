@@ -13,7 +13,7 @@ const Home = () => {
   const [notes, setNotes] = useState([]);
   const [color, setColor] = useState("");
   const [active,setActive] = useState(false)
-  const [notesText,setNotesText] = useState([])
+  const [notesText,setNotesText] = useState([{}])
   const [activeNotesData,setActiveNotesData] = useState([])
   const groupName = useRef(null);
 
@@ -44,17 +44,21 @@ const onUpdateNote = (updatedNote) => {
     }
     return note
   })
-  setNotesText([...notesText,updatedNotesArray])
+
+  setNotesText([...notesText,...updatedNotesArray])
   setNotes(updatedNotesArray)
 }
 
 useEffect(()=>{
     const updatedNotes = notesText.filter((note)=>{
-      return note.id === activeNote.id
+          if(note.id == active) {
+            return note.id
+          }
     })
+
    setActiveNotesData(updatedNotes)
-   console.log(activeNotesData)
-},[notesText])
+    console.log(notesText)
+},[notesText,active])
 
   const activeNote = () => {
     return notes.find((notes)=> notes.id === active)

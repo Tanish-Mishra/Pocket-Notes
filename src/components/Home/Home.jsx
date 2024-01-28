@@ -60,6 +60,7 @@ useEffect(()=>{
     setActiveNotesData(updatedNotes)
 },[notesText,active])
 
+
   const activeNote = () => {
     return notes.find((notes)=> notes.id === active)
   }
@@ -77,7 +78,7 @@ useEffect(()=>{
         <></>
       )}
      <NotesList notes={notes} notesAreaStyle={notesAreaStyle} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
-     {!active ? <MainArea/>:  <Hero active={active} notesAreaStyle={notesAreaStyle} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
+     {!active ?<MainArea/>:  <Hero active={active} notesAreaStyle={notesAreaStyle} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
    
     </div>
   );

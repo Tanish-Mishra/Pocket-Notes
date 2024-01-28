@@ -10,6 +10,11 @@
     scrollbar-width: none;
 }
 
+.notes::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
 .notes__heading {
     font-size: var(--font-medium);
 }
@@ -24,7 +29,10 @@
     padding-bottom: 0.5rem;
     margin: var(--margin-medium) 0 0 0;
 }
-
+.notes__list::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
 .notes__list_item {
     padding-left: 2rem ;
     display: flex;

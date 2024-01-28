@@ -82,6 +82,7 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
                 e.preventDefault();
                 onEditField(inputValue) 
                 textValue.current.value = " "
+                setInputValue("")
              }
         }}
          ref={textValue}

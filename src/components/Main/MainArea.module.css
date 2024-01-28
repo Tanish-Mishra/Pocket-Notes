@@ -32,3 +32,12 @@ background: #DAE5F5;
     color: #292929;
     bottom: 1.5rem;
 }
+
+
+@media all and (max-width: 500px) {
+
+    .main {
+      display: none;
+    }
+    
+}

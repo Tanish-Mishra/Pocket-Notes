@@ -1,14 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
-import styles from "./Home.module.css";
+import styles from "./MobileHome.module.css";
 import uuid from 'react-uuid'
-import NotesList from "../NotesList/NotesList";
-import Hero from "../Hero/Hero";
-import MainArea from "../Main/MainArea";
-import Popup from "../Popup/Popup";
+import MobileNote from "../MobileNote/MobileNote";
+import MobileHero from "../MobileHero/MobileHero";
+import MobileMain from "../MobileMain/MobileMain";
+import MobilePopup from "../MobilePopup/MobilePopup";
+import { Routes,Route } from "react-router-dom";
 
 
 import Banner from "/assets/images/study-notes.png";
-const Home = () => {
+const MobileHome = () => {
   const [isPopup, setIsPopup] = useState(false);
   const [notes, setNotes] = useState([]);
   const [color, setColor] = useState("");
@@ -16,7 +17,6 @@ const Home = () => {
   const [notesText,setNotesText] = useState([{}])
   const [activeNotesData,setActiveNotesData] = useState([])
   const groupName = useRef(null);
-  const notesAreaStyle = useRef(null)
 
   const handleNotes = () => {
     if (groupName.current.value === "" || color === "") {
@@ -42,36 +42,32 @@ const onUpdateNote = (updatedNote) => {
   const updatedNotesArray = notes.map((note) => {
     if(note.id === active) {
       return updatedNote
-    } 
-     return note
-
+    }
+    return note
   })
 
   setNotesText([...notesText,...updatedNotesArray])
-  // console.log(notesText)
-  // setNotes(updatedNotesArray)
+  setNotes(updatedNotesArray)
 }
 
 useEffect(()=>{
-      // console.log (notesText)
-        const updatedNotes = notesText.filter((note)=>{
+    const updatedNotes = notesText.filter((note)=>{
           if(note.id === active) {
             return note.id
           }
-    }) 
-    
+    })
+
     setActiveNotesData(updatedNotes)
-    // console.log(notesText)
+    console.log(notesText)
 },[notesText,active])
 
   const activeNote = () => {
     return notes.find((notes)=> notes.id === active)
   }
-
   return (
     <div className={styles.container}>
       {isPopup ? (
-        <Popup
+        <MobilePopup
           color={color}
           setColor={setColor}
           groupName={groupName}
@@ -80,11 +76,11 @@ useEffect(()=>{
       ) : (
         <></>
       )}
-     <NotesList notes={notes} notesAreaStyle={notesAreaStyle} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
-     {!active ? <MainArea/>:  <Hero active={active} notesAreaStyle={notesAreaStyle} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
-   
+     <MobileNote notes={notes} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
+
+     {!active ? <MobileMain/>:  <MobileHero active={active} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
     </div>
   );
 };
 
-export default Home;
+export default MobileHome;

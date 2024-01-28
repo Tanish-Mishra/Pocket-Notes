@@ -74,20 +74,3 @@
     border-radius: 1rem;
     background: rgba(47, 47, 47, 0.17); 
 }
-
-
-@media screen and (max-width: 500px) {
-    .notes {
-        width: 100vw;
-    }
-    .notes__heading {
-        font-size: var(--font-medium-sm);
-    }
-    .notes__btn {
-     left: 70%;
-    }
-
-    .notes__name {
-        font-size: var(--font-medium-s);
-    }
-}

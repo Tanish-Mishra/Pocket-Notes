@@ -1,14 +1,13 @@
 import React, { useEffect,useRef, useState } from "react";
-import styles from "./Hero.module.css";
+import styles from "./MobileHero.module.css";
 
 import Arrow from "/assets/icons/arrow.svg";
 import BlueArrow from '/assets/icons/blue-arrow.svg'
-const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAreaStyle }) => {
+const MobileHero = ({ activeNote,onUpdateNote,notesText,activeNotesData }) => {
      const [inputValue,setInputValue] = useState()
      const arrowHighlight = useRef(null)
      const textValue = useRef(null)
-     const some = useRef(null)
-    
+
      const onEditField = (value) => {
         if(value.trim().length>0) {
           onUpdateNote({
@@ -24,9 +23,6 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
               time: new Date().toLocaleTimeString(),
           }) }
      } 
-  
-     
-  
    
    useEffect(()=>{
     if(textValue.current.value.trim().length>0) {
@@ -36,27 +32,20 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
     }
    },[inputValue])
   return (
-    <div className={styles.container} ref={notesAreaStyle}>
     <div className={styles.hero}>
       <div className={styles.hero__header}>
         <div className={styles.hero__profile} style={{background: `${activeNote?.color}`}}>{activeNote.name.split(" ")
           .map((word) => word.charAt(0))
           .join("")
           .toUpperCase()}</div>
-        <div className={styles.hero__header_name} >{activeNote?.name}</div>
+        <div className={styles.hero__header_name}>{activeNote?.name}</div>
       </div>
       
       <div className={styles.hero__body}>
   
      
-  { activeNotesData.map((note,index)=>{
-     
-     if(note.id === active) {
-      if(note.text === "") {
-        return
-      }
-     
-      return (
+  { activeNotesData.map((note)=>(
+   
         <div className={styles.hero__display}>
           <p>{note.text}</p>
           <div className={styles.hero__date}>
@@ -65,10 +54,8 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
             <span>{note?.time}</span>
           </div>
         </div>
-      )
-     }
 
-  })}
+))}
 
       </div>
 
@@ -94,12 +81,11 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
              onEditField(inputValue) 
              textValue.current.value = " "
         }} >
-          <img src={Arrow}  alt="enter"  />
+          <img src={Arrow}  alt="enter" />
         </button>
       </div>
-    </div>
     </div>
   );
 };
 
-export default Hero;
+export default MobileHero;

@@ -43,13 +43,13 @@
     flex-direction: column;
     overflow: scroll;
     scroll-behavior: smooth;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
     
     height: 70%;
     background: var(--color-accent);
 }
 .hero__body::-webkit-scrollbar {
-    height: 0;
+   height: 0;
 }
 
 .hero__display {

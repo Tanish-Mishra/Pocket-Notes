@@ -43,14 +43,20 @@
     flex-direction: column;
     overflow: scroll;
     scroll-behavior: smooth;
-    /* scrollbar-width: none; */
-    
+    /* scrollbar-width: none; */   
     height: 68.5%;
     background: var(--color-accent);
 }
-/* .hero__body::-webkit-scrollbar {
-   height: 0;
-} */
+.hero__body::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 0.4rem;
+    background: rgba(0, 0, 0, 0.63); 
+}
+
+.hero__body::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 0.3rem;
+}
 
 .hero__display {
     position: relative;

@@ -48,9 +48,9 @@
     height: 70%;
     background: var(--color-accent);
 }
-.hero__body::-webkit-scrollbar {
+/* .hero__body::-webkit-scrollbar {
    height: 0;
-}
+} */
 
 .hero__display {
     position: relative;

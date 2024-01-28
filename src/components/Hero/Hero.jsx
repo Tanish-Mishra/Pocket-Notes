@@ -7,7 +7,7 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
      const [inputValue,setInputValue] = useState()
      const arrowHighlight = useRef(null)
      const textValue = useRef(null)
-     const some = useRef(null)
+    
     
      const onEditField = (value) => {
         if(value.trim().length>0) {
@@ -33,7 +33,7 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
     }
    },[inputValue])
   return (
-    <div className={styles.container} ref={notesAreaStyle}>
+    <div className={styles.container}>
     <div className={styles.hero}>
       <div className={styles.hero__header}>
         <div className={styles.hero__profile} style={{background: `${activeNote?.color}`}}>{activeNote.name.split(" ")

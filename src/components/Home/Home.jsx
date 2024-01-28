@@ -16,7 +16,7 @@ const Home = () => {
   const [notesText,setNotesText] = useState([{}])
   const [activeNotesData,setActiveNotesData] = useState([])
   const groupName = useRef(null);
-  const notesAreaStyle = useRef(null)
+  const re = useRef()
 
   const handleNotes = () => {
     if (groupName.current.value === "" || color === "") {
@@ -77,8 +77,8 @@ useEffect(()=>{
       ) : (
         <></>
       )}
-     <NotesList notes={notes} notesAreaStyle={notesAreaStyle} setIsPopup={setIsPopup} active={active} setActive={setActive} /> 
-     {!active ?<MainArea/>:  <Hero active={active} notesAreaStyle={notesAreaStyle} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
+     <NotesList notes={notes}  setIsPopup={setIsPopup} re={re} active={active} setActive={setActive} /> 
+     {!active ?<MainArea/>:  <Hero active={active} activeNote={activeNote()} onUpdateNote={onUpdateNote} notesText={notesText} activeNotesData={activeNotesData}/>}
    
     </div>
   );

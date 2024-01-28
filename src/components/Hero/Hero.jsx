@@ -15,6 +15,7 @@ const Hero = ({
   const [inputValue, setInputValue] = useState();
   const arrowHighlight = useRef(null);
   const textValue = useRef(null);
+  const messageEndRef = useRef(null)
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notesText));
@@ -24,6 +25,9 @@ const Hero = ({
     localStorage.setItem("notesList", JSON.stringify(notes));
   }, [notes]);
 
+  useEffect(() => {
+    messageEndRef?.current?.scrollIntoView({ behavior: "smooth" })
+  },[activeNotesData])
   const onEditField = (value) => {
     if (value.trim().length > 0) {
       onUpdateNote({
@@ -84,6 +88,7 @@ const Hero = ({
               );
             }
           })}
+          <div ref={messageEndRef}/>
         </div>
 
         <div className={styles.hero__footer}>

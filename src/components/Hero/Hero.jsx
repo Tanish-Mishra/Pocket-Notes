@@ -25,9 +25,6 @@ const Hero = ({ active,activeNote,onUpdateNote,notesText,activeNotesData,notesAr
           }) }
      } 
   
-     
-  
-   
    useEffect(()=>{
     if(textValue.current.value.trim().length>0) {
      arrowHighlight.current.innerHTML = `<img src=${BlueArrow} alt="error"/>`

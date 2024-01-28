@@ -48,12 +48,9 @@ const onUpdateNote = (updatedNote) => {
   })
 
   setNotesText([...notesText,...updatedNotesArray])
-  // console.log(notesText)
-  // setNotes(updatedNotesArray)
 }
 
 useEffect(()=>{
-      // console.log (notesText)
         const updatedNotes = notesText.filter((note)=>{
           if(note.id === active) {
             return note.id
@@ -61,7 +58,6 @@ useEffect(()=>{
     }) 
     
     setActiveNotesData(updatedNotes)
-    // console.log(notesText)
 },[notesText,active])
 
   const activeNote = () => {

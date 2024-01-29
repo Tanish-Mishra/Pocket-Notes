@@ -81,12 +81,14 @@ const Home = () => {
   return (
     <div className={styles.container}>
       {isPopup ? (
+    
         <Popup
-          color={color}
-          setColor={setColor}
-          groupName={groupName}
-          handleNotes={handleNotes}
+        color={color}
+        setColor={setColor}
+        groupName={groupName}
+        handleNotes={handleNotes}
         />
+  
       ) : (
         <></>
       )}

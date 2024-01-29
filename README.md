@@ -1,3 +1,5 @@
+https://github.com/Tanish-Mishra/Pocket-Notes/assets/107027726/176b34dd-a1cf-429e-b71f-143c0b6a06ff
+
 # Pocket Notes App
 
 Welcome to the Pocket Notes App! This application allows you to create different note groups and save notes within them, complete with time and date stamps. Built using React.js, JavaScript, HTML, and CSS, this app utilizes local storage to store your notes securely.

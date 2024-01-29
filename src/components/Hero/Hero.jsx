@@ -36,14 +36,6 @@ const Hero = ({
         heroActive.current.style.display = "none";
       }
     }
-  }, [isStyleActive]);
-
-  useEffect(() => {
-    if (screenSize <= 500) {
-      if (isStyleActive) {
-        heroActive.current.style.display = "block";
-      }
-    }
   }, [heroSize, isStyleActive]);
 
   useEffect(() => {

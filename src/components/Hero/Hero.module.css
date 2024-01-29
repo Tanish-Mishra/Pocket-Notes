@@ -139,4 +139,10 @@
   .hero__date {
     font-size: var(--font-small-s);
   }
+  .hero__textarea::placeholder {
+    font-size: var(--font-small-s);
+  }
+  .hero__textarea {
+    font-size: var(--font-small);
+  }
 }

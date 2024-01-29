@@ -152,6 +152,7 @@ const Hero = ({
             onClick={() => {
               onEditField(inputValue);
               textValue.current.value = " ";
+              setInputValue("");
             }}
           >
             <img src={Arrow} alt="enter" />

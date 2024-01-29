@@ -44,6 +44,10 @@ Here are some potential future enhancements for the Pocket Notes App:
 - HTML
 - CSS
 
+## Feedback
+
+Your feedback is important! If you encounter any issues or have suggestions for improvement, please [create an issue](https://github.com/tanish-mishra/pocket-notes/issues).
+
 ## About the Developer
 
 The Pocket Notes App was developed by [Tanish Mishra]. Connect with me on [LinkedIn](https://www.linkedin.com/in/tanish-mishra-5a7478265) for more projects and updates.

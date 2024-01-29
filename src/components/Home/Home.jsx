@@ -14,6 +14,8 @@ const Home = () => {
   const [active, setActive] = useState(false);
   const [notesText, setNotesText] = useState([{}]);
   const [activeNotesData, setActiveNotesData] = useState([]);
+  const [isStyleActive,setIsStyleActive] = useState(false);
+  const [screenSize,setScreenSize] = useState(window.innerWidth)  
   const groupName = useRef(null);
 
   const handleNotes = () => {
@@ -71,6 +73,11 @@ const Home = () => {
     return notes.find((notes) => notes.id === active);
   };
 
+  const checkScreenSize = () => {
+    setScreenSize(window.innerWidth)
+  }
+
+  window.addEventListener("resize",checkScreenSize)
   return (
     <div className={styles.container}>
       {isPopup ? (
@@ -88,6 +95,9 @@ const Home = () => {
         setIsPopup={setIsPopup}
         active={active}
         setActive={setActive}
+        setIsStyleActive={setIsStyleActive}
+        isStyleActive={isStyleActive}
+        screenSize={screenSize}
       />
       {!active ? (
         <MainArea />
@@ -100,6 +110,9 @@ const Home = () => {
           setNotes={setNotes}
           notesText={notesText}
           activeNotesData={activeNotesData}
+          setIsStyleActive={setIsStyleActive}
+          isStyleActive={isStyleActive}
+          screenSize={screenSize}
         />
       )}
     </div>

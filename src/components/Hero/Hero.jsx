@@ -11,11 +11,40 @@ const Hero = ({
   activeNotesData,
   notes,
   setNotes,
+  isStyleActive,
+  setIsStyleActive,
+  screenSize
 }) => {
   const [inputValue, setInputValue] = useState();
   const arrowHighlight = useRef(null);
   const textValue = useRef(null);
   const messageEndRef = useRef(null)
+  const heroActive = useRef(null)
+  const [heroScreenSize,setHeroScreenSize] = useState()
+  
+  const heroSize = () => {
+     setHeroScreenSize(window.innerWidth)
+  }
+
+  window.addEventListener("resize",heroSize)
+
+  useEffect(()=>{
+    if(screenSize <= 500){
+    if(isStyleActive){
+      heroActive.current.style.display = "block" } else {
+        heroActive.current.style.display = "none"
+      }
+    }
+  },[isStyleActive])
+  
+  useEffect(()=>{
+    if(screenSize <= 500){
+      if(isStyleActive){
+       heroActive.current.style.display = "block" }
+      } 
+  },[heroSize,isStyleActive])
+
+
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notesText));
@@ -25,6 +54,9 @@ const Hero = ({
     localStorage.setItem("notesList", JSON.stringify(notes));
   }, [notes]);
 
+  useEffect(()=>{
+     console.log(isStyleActive)
+  },[])
   useEffect(() => {
     messageEndRef?.current?.scrollIntoView({ behavior: "smooth" })
   },[activeNotesData])
@@ -53,9 +85,13 @@ const Hero = ({
     }
   }, [inputValue]);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={heroActive} >
       <div className={styles.hero}>
         <div className={styles.hero__header}>
+          <div className={styles.hero__hearder_arrow} onClick={()=>{
+            setIsStyleActive(false)
+            console.log(isStyleActive)
+          }}><img src="/assets/icons/back-arrow.png" alt="error"/></div>
           <div
             className={styles.hero__profile}
             style={{ background: `${activeNote?.color}` }}

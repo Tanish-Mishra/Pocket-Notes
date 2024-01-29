@@ -12,9 +12,20 @@
 .hero__header {
     display: flex;
     align-items: center;
-    min-height: 6rem;
+    min-height: 12%;
     width: 100%;
     background:  #001F8B;
+}
+
+.hero__hearder_arrow {
+ display: none;
+ position: relative;
+ padding-top: 0.5rem;
+ margin: auto -0.4rem auto 1rem;
+}
+.hero__hearder_arrow img {
+   height: 1rem;
+   /* width: 1.2rem; */
 }
 
 .hero__profile {
@@ -44,7 +55,7 @@
     overflow: scroll;
     scroll-behavior: smooth;
     /* scrollbar-width: none; */   
-    height: 68.5%;
+    height: 68.8%;
     background: var(--color-accent);
 }
 .hero__body::-webkit-scrollbar {
@@ -85,7 +96,7 @@
     display: flex;
     position: absolute;
     bottom: 0;
-    height: 11rem;
+    height: 21%;
     padding: 1rem;
     width: 100%;
     background: blue;
@@ -124,6 +135,10 @@
 
     .container {
       display: none;
+      width: 100%;
+    }
+    .hero__hearder_arrow {
+        display: block;
     }
      
 }

@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./NotesList.module.css";
 
 import Add from "/assets/icons/add.png";
-const NotesList = ({ notes, setIsPopup, active, setActive }) => {
+const NotesList = ({ notes, setIsPopup, active, setActive,setIsStyleActive,isStyleActive,screenSize }) => {
+   const notesActive = useRef(null)
+   useEffect(()=>{
+   if(screenSize<=500){
+      if(isStyleActive){
+         notesActive.current.style.display = "none"
+      } else {
+         notesActive.current.style.display = "block"
+      }
+   }
+   },[isStyleActive])
+
+   useEffect(()=>{
+   if(screenSize<=500){
+      if(isStyleActive){
+         notesActive.current.style.display = "none"
+      } 
+   } else if(screenSize > 500) {
+      notesActive.current.style.display = "block"
+   }
+   },[screenSize])
+
   return (
-    <div className={styles.notes}>
+    <div className={styles.notes} ref={notesActive}>
       <h3 className={styles.notes__heading}>Pocket Notes</h3>
       <div className={styles.notes__list}>
         {notes.map((note) => (
@@ -14,6 +35,7 @@ const NotesList = ({ notes, setIsPopup, active, setActive }) => {
             }`}
             onClick={() => {
               setActive(note.id);
+              setIsStyleActive(true)
             }}
           >
             <div

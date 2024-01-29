@@ -15,9 +15,10 @@ Experience the Pocket Notes App at [Pocket Notes App](https://notes-pocket.verce
 
 ## Screenshots
 
-![App Screenshot](/path/to/screenshot1.png)
-![App Screenshot](/path/to/screenshot2.png)
-![App Screenshot](/path/to/screenshot3.png)
+<img width="1440" alt="Screenshot 2024-01-30 at 12 56 00 AM" src="https://github.com/Tanish-Mishra/Pocket-Notes/assets/107027726/bad7f8e2-6629-443c-bcca-45b0ad2aefb6">
+<img width="1440" alt="Screenshot 2024-01-30 at 12 56 19 AM" src="https://github.com/Tanish-Mishra/Pocket-Notes/assets/107027726/19e40b3e-ba7f-4b28-92a6-2be01984f92c">
+<img width="1440" alt="Screenshot 2024-01-30 at 12 56 47 AM" src="https://github.com/Tanish-Mishra/Pocket-Notes/assets/107027726/d821dd3b-008c-4394-a2b8-b69c85c19a37">
+<img width="1440" alt="Screenshot 2024-01-30 at 12 57 29 AM" src="https://github.com/Tanish-Mishra/Pocket-Notes/assets/107027726/9da3cd2f-938c-4543-8206-d20162b50f09">
 
 ## Usage
 

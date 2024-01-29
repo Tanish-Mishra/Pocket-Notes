@@ -14,8 +14,8 @@ const Home = () => {
   const [active, setActive] = useState(false);
   const [notesText, setNotesText] = useState([{}]);
   const [activeNotesData, setActiveNotesData] = useState([]);
-  const [isStyleActive,setIsStyleActive] = useState(false);
-  const [screenSize,setScreenSize] = useState(window.innerWidth)  
+  const [isStyleActive, setIsStyleActive] = useState(false);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
   const groupName = useRef(null);
 
   const handleNotes = () => {
@@ -32,9 +32,8 @@ const Home = () => {
         month: "long",
         year: "numeric",
       }),
-      time: new Date().toLocaleTimeString(),
     };
-    setNotes([...notes, newNotes]);
+    time: new Date().toLocaleTimeString(), setNotes([...notes, newNotes]);
     setIsPopup(false);
   };
 
@@ -74,21 +73,19 @@ const Home = () => {
   };
 
   const checkScreenSize = () => {
-    setScreenSize(window.innerWidth)
-  }
+    setScreenSize(window.innerWidth);
+  };
 
-  window.addEventListener("resize",checkScreenSize)
+  window.addEventListener("resize", checkScreenSize);
   return (
     <div className={styles.container}>
       {isPopup ? (
-    
         <Popup
-        color={color}
-        setColor={setColor}
-        groupName={groupName}
-        handleNotes={handleNotes}
+          color={color}
+          setColor={setColor}
+          groupName={groupName}
+          handleNotes={handleNotes}
         />
-  
       ) : (
         <></>
       )}

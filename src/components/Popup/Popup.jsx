@@ -16,8 +16,6 @@ const Popup = ({ setColor, groupName, handleNotes }) => {
     });
   }
   return (
-
-
     <div className={styles.popup}>
       <Toaster position="top-right" reverseOrder={false} />
       <h2 className={styles.popup__header}>Create New Group</h2>
@@ -28,7 +26,7 @@ const Popup = ({ setColor, groupName, handleNotes }) => {
           ref={groupName}
           className={styles.popup__body_input}
           placeholder="Enter Group Name"
-          />
+        />
       </div>
       <div className={styles.popup__footer}>
         <span className={styles.popup__footer_text}>Color</span>
@@ -39,49 +37,48 @@ const Popup = ({ setColor, groupName, handleNotes }) => {
               setColor("#B38BFA");
               notifySelection("Purple");
             }}
-            ></button>
+          ></button>
           <button
             className={`${styles.popup__color} ${styles.popup__color_pink}`}
             onClick={() => {
               setColor("#FF79F2");
               notifySelection("Pink");
             }}
-            ></button>
+          ></button>
           <button
             className={`${styles.popup__color} ${styles.popup__color_coral}`}
             onClick={() => {
               setColor("#43E6FC");
               notifySelection("Coral");
             }}
-            ></button>
+          ></button>
           <button
             className={`${styles.popup__color} ${styles.popup__color_orange} `}
             onClick={() => {
               setColor("#F19576");
               notifySelection("Orange");
             }}
-            ></button>
+          ></button>
           <button
             className={`${styles.popup__color} ${styles.popup__color_blue} `}
             onClick={() => {
               setColor("#0047FF");
               notifySelection("Blue");
             }}
-            ></button>
+          ></button>
           <button
             className={`${styles.popup__color} ${styles.popup__color_lightblue}`}
             onClick={() => {
               setColor("#6691FF");
               notifySelection("Light Blue");
             }}
-            ></button>
+          ></button>
         </div>
       </div>
       <button className={styles.popup__btn} onClick={handleNotes}>
         Create
       </button>
     </div>
-
   );
 };
 

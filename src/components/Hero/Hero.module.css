@@ -1,6 +1,6 @@
-.container{
-    height: 100vh;
-    width: 70%;
+.container {
+  height: 100vh;
+  width: 70%;
 }
 .hero {
   position: relative;
@@ -10,135 +10,133 @@
   flex-direction: column;
 }
 .hero__header {
-    display: flex;
-    align-items: center;
-    min-height: 12%;
-    width: 100%;
-    background:  #001F8B;
+  display: flex;
+  align-items: center;
+  min-height: 12%;
+  width: 100%;
+  background: #001f8b;
 }
 
 .hero__hearder_arrow {
- display: none;
- position: relative;
- padding-top: 0.5rem;
- margin: auto -0.4rem auto 1rem;
+  display: none;
+  position: relative;
+  padding-top: 0.5rem;
+  margin: auto -0.4rem auto 1rem;
 }
 .hero__hearder_arrow img {
-   height: 1rem;
-   /* width: 1.2rem; */
+  height: 1rem;
+  /* width: 1.2rem; */
 }
 
 .hero__profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-    width: 4rem;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 50%;
-    background: blue;
-    margin: 0 1.5rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 50%;
+  background: blue;
+  margin: 0 1.5rem 0 1.5rem;
 }
 
 .hero__header_name {
-    color: #fff;
-    font-weight: 500;
-    font-size: var(--font-medium-sm);
+  color: #fff;
+  font-weight: 500;
+  font-size: var(--font-medium-sm);
 }
 
 .hero__body {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    /* scrollbar-width: none; */   
-    height: 68.8%;
-    background: var(--color-accent);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  /* scrollbar-width: none; */
+  height: 68.8%;
+  background: var(--color-accent);
 }
 .hero__body::-webkit-scrollbar {
-    width: 0.5rem;
-    border-radius: 0.4rem;
-    background: rgba(0, 0, 0, 0.63); 
+  width: 0.5rem;
+  border-radius: 0.4rem;
+  background: rgba(0, 0, 0, 0.63);
 }
 
 .hero__body::-webkit-scrollbar-thumb {
-    background-color: #fff;
-    border-radius: 0.3rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
 }
 
 .hero__display {
-    position: relative;
-    min-height: 12rem;
-    padding: 1rem;
-    background: #fff;
-    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25); 
-    border-radius: 0.5rem;
-    margin-bottom: var(--margin-small);
+  position: relative;
+  min-height: 12rem;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  margin-bottom: var(--margin-small);
 }
 
 .hero__date {
-    position: absolute;
-    display: flex;
-    height: 2rem;
-    bottom: 1rem;
-    right: 1rem;
-    color: #353535; 
-
+  position: absolute;
+  display: flex;
+  height: 2rem;
+  bottom: 1rem;
+  right: 1rem;
+  color: #353535;
 }
 .hero__date span {
- margin-right: 1rem;
- font-weight: 500;
+  margin-right: 1rem;
+  font-weight: 500;
 }
 .hero__footer {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    height: 21%;
-    padding: 1rem;
-    width: 100%;
-    background: blue;
-    border-radius: 0 0 0rem 0.5rem;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  height: 21%;
+  padding: 1rem;
+  width: 100%;
+  background: blue;
+  border-radius: 0 0 0rem 0.5rem;
 }
 
 .hero__textarea {
-     position: relative;
-     height: 100%;
-     width: 100%;
-     padding: 1rem;
-     resize: none;
-     font-size: var(--font-medium-s);
-     border-radius: 0.5rem;
-     
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+  font-size: var(--font-medium-s);
+  border-radius: 0.5rem;
 }
 .hero__textarea::placeholder {
-    color: #9A9A9A;
+  color: #9a9a9a;
 }
 .hero__btn {
-    position: absolute;
-    background: transparent;
-    border: none;
-    right: 2.5rem;
-    bottom: 2rem;
+  position: absolute;
+  background: transparent;
+  border: none;
+  right: 2.5rem;
+  bottom: 2rem;
 }
-.hero__btn img{
-    height: 2rem;
-    width: 2rem;
-    background: transparent;
-    color: red;
+.hero__btn img {
+  height: 2rem;
+  width: 2rem;
+  background: transparent;
+  color: red;
 }
-
 
 @media all and (max-width: 500px) {
-
-    .container {
-      display: none;
-      width: 100%;
-    }
-    .hero__hearder_arrow {
-        display: block;
-    }
-     
+  .container {
+    display: none;
+    width: 100%;
+  }
+  .hero__hearder_arrow {
+    display: block;
+  }
+  .hero__date {
+    font-size: var(--font-small-s);
+  }
 }
